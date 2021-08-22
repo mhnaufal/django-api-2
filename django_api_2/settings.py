@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'django_api_2.pengguna.apps',
+    'django_api_2.pengguna',
 ]
 
 MIDDLEWARE = [
