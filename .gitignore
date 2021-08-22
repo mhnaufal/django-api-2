@@ -1,2 +1,3 @@
 ./.env
 ./django-api-2/__pycache__
+./django_api_2/pengguna/__pycache__
