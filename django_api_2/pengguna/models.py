@@ -5,10 +5,13 @@ from django.db import models
 
 
 class Pengguna(models.Model):
+    # Enumeration for StatusVerif column in table pengguna
     class StatusVerif(models.TextChoices):
         SUDAH = "SUDAH", _("sudah")
         BELUM = "BELUM", _("belum")
 
+
+    # Columns in tabel pengguna
     nama = models.CharField(max_length=255, blank=False, null=False)
     email = models.EmailField(blank=True, null=True, unique=True)
     password = models.CharField(max_length=255, blank=True, null=True)

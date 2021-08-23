@@ -1,8 +1,12 @@
 from django.urls import path
-from .views import get_users_data, get_user_data, register_view
+from .views import get_all_users, get_user_data, register_view
 
 urlpatterns = [
-    path("all/", get_users_data),
+    # Users
+    path("all/", get_all_users),
     path("me/<id>", get_user_data),
+
+
+    # Authentication
     path("auth/register/", register_view),
 ]

@@ -20,6 +20,7 @@ class PenggunaSerializer(serializers.ModelSerializer):
 
 class RegistrationSerializer(serializers.ModelSerializer):
     # Validation fields which is use for register
+    # validation errors goes inside here
     nama = serializers.CharField(default="User Mulo")
 
     email = serializers.EmailField(
@@ -64,9 +65,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
             nama=self.validated_data["nama"],
             email=self.validated_data["email"],
             no_hp=self.validated_data["no_hp"],
-            password=make_password(self.validated_data["password"])
+            password=make_password(self.validated_data["password"]),
         )
-        # pengguna.set_password(password)
-        # pengguna.password = make_password(self.validated_data["password"])
         pengguna.save()
         return pengguna
